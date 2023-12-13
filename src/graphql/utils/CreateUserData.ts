@@ -6,8 +6,8 @@ export class createUserData {
     @Field()
     username : string ;
 
-    @Field()
-    displayName : string ;
+    @Field({nullable:true})
+    displayName?: string ;
 
     
 

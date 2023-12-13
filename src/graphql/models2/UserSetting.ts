@@ -9,11 +9,11 @@ export class UserSetting {
     @Field ((type) => Int)
     userId : number;
    
-    @Column()
+    @Column({default:false})
     @Field({defaultValue:false})
     recieveEmails : boolean
     
-    @Column()
+    @Column({default:false})
     @Field({defaultValue :false})
     recieveNotifications: boolean ;
 

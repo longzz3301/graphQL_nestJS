@@ -13,7 +13,6 @@ type User {
   username: String!
   displayName: String
   settings: UserSetting
-  getUserSettings: UserSetting!
 }
 
 type Query {
@@ -28,7 +27,7 @@ type Mutation {
 
 input createUserData {
   username: String!
-  displayName: String!
+  displayName: String
 }
 
 input CreateUserSettingInput {

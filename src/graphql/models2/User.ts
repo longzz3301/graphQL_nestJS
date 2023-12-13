@@ -15,10 +15,11 @@ export class User {
     @Field()
     username: string ;
 
-    @Column()
-    @Field({nullable : true}) // có thể có giá trị null 
-    displayName?: string ; // trường này có thể có giá trị undefined hoặc không cần phải được khai báo (optional)
+    @Column({nullable : true})
+    @Field({nullable : true}) 
+    displayName?: string ; 
 
+    
     @OneToOne(() => UserSetting)
     @JoinColumn()
     @Field({nullable:true})

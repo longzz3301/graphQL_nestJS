@@ -2,7 +2,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { UserResolver } from './users/UserResolver';
-import { UserSettingResolver } from './graphql/resolver.ts/UserSettingsResolver';
+import { UserSettingResolver } from './users/UserSettingsResolver';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './graphql/models2/User';
 import { UserSetting } from './graphql/models2/UserSetting';
@@ -23,12 +23,13 @@ import { UserModule } from './users/user.module';
       password:'1',
       database:'test1',
       entities: [User , UserSetting] ,
-      synchronize: true
+      synchronize: true ,
+      logging:true
 
     }),
     UserModule,
   ],
   controllers: [],
-  providers: [UserResolver , UserSettingResolver], // import resolver vafo 
+  providers: [], 
 })
 export class AppModule {}
